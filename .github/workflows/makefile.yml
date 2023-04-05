@@ -47,7 +47,9 @@ jobs:
       run: ./configure
 
     - name: Install dependencies
-      run: make
+      run: |
+        cd win/
+        make
     
     - uses: actions/upload-artifact@v3
       with:

@@ -6,7 +6,4 @@
 #define PACKAGE "srm"
 #define VERSION "1.2.15"
 
-#define HAVE_STRING_H 1
-#define _CRT_SECURE_NO_WARNINGS 1
-
 #endif

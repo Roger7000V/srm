@@ -48,8 +48,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd win/
-        make
+        cmake -B build -DCMAKE_BUILD_TYPE=Release -G Ninja
+        cmake --build build
     
     - uses: actions/upload-artifact@v3
       with:

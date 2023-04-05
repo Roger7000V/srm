@@ -14,37 +14,33 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: modify
+    - name: Modify
       run: |
         sed -i '' 's/O2/O3/g' configure
         chmod +x configure
     
-    - name: configure
+    - name: Configure
       run: ./configure
 
     - name: Install dependencies
       run: make
     
+    - name: Compress
+      run: |
+        mv src/srm ./
+        zip srm.zip srm
+    
     - uses: actions/upload-artifact@v3
       with:
         name: srm
-        path: src/srm
-  
+        path: srm.zip
+
   build-windows:
   
     runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
-    
-    - name: modify
-      run: |
-        sed -i 's/O2/O3/g' configure
-        chmod +x configure
-    
-    - name: configure
-      shell: bash
-      run: ./configure
 
     - name: Install dependencies
       run: |
@@ -54,4 +50,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: srm
-        path: src/srm
+        path: build/srm.exe

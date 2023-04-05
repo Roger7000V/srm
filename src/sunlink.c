@@ -626,7 +626,7 @@ int sunlink_impl(const char *path, const int options)
     error("%s : file size: %lli, can not work with negative values", path, (long long)srm.file_size);
     return -1;
   }
-#ifdef _MSC_VER
+#ifdef WIN32
   srm.buffer_size = 4096;
 #else
   srm.buffer_size = statbuf.st_blksize;

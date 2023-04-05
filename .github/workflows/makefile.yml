@@ -15,7 +15,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: modify
-      run: sed -i '' 's/O2/O3/g' configure
+      run: |
+        sed -i '' 's/O2/O3/g' configure
+        chmod +x configure
     
     - name: configure
       run: ./configure
@@ -36,7 +38,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: modify
-      run: sed -i 's/O2/O3/g' configure
+      run: |
+        sed -i 's/O2/O3/g' configure
+        chmod +x configure
     
     - name: configure
       run: ./configure

@@ -5,9 +5,9 @@ project(srm C CXX)
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
 ################################################################################
-if(NOT CMAKE_VS_PLATFORM_NAME)
-    set(CMAKE_VS_PLATFORM_NAME "x64")
-endif()
+# if(NOT CMAKE_VS_PLATFORM_NAME)
+    # set(CMAKE_VS_PLATFORM_NAME "x64")
+# endif()
 message("${CMAKE_VS_PLATFORM_NAME} architecture in use")
 
 if(NOT ("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "Win32"))

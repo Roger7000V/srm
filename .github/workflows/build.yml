@@ -42,7 +42,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Update MinGW
+    - name: Upgrade MinGW
       run: choco upgrade mingw -y
     
     - name: Build

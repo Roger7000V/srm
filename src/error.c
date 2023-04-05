@@ -1,8 +1,6 @@
 /* this file is part of srm http://srm.sourceforge.net/
    It is licensed under the MIT/X11 license */
 
-#include "config.h"
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>

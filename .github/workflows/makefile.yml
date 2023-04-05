@@ -13,7 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name: modify
+      run: sed -i '' 's/O2/O3/g' configure
+    
     - name: configure
       run: ./configure
 
@@ -31,7 +34,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name: modify
+      run: sed -i 's/O2/O3/g' configure
+    
     - name: configure
       run: ./configure
 

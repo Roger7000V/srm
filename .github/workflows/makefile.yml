@@ -43,6 +43,7 @@ jobs:
         chmod +x configure
     
     - name: configure
+      shell: bash
       run: ./configure
 
     - name: Install dependencies

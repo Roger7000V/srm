@@ -1,0 +1,44 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-macos:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: configure
+      run: ./configure
+
+    - name: Install dependencies
+      run: make
+    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: srm
+        path: src/srm
+  
+  build-windows:
+  
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: configure
+      run: ./configure
+
+    - name: Install dependencies
+      run: make
+    
+    - uses: actions/upload-artifact@v3
+      with:
+        name: srm
+        path: src/srm
